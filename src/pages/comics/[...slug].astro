@@ -1,0 +1,39 @@
+---
+import { getCollection } from 'astro:content';
+import ComicLayout from 'src/layouts/ComicLayout.astro';
+import Layout from '../../layouts/Layout.astro';
+// 1. Generate a new path for every collection entry
+export async function getStaticPaths() {
+	const comics = (await getCollection('comics')).sort((a, b) => {
+		const aDateString = a.data.date.toLocaleDateString();
+		const bDateString = b.data.date.toLocaleDateString();
+
+		if (aDateString < bDateString) return 1;
+		if (aDateString > bDateString) return -1;
+		else return 0;
+	});
+	return comics.map((entry, i, arr) => ({
+		params: {
+			slug: entry.id,
+		},
+		props: {
+			entry,
+			previousSlug: arr[i - 1]?.id,
+			nextSlug: arr[i + 1]?.id,
+		},
+	}));
+}
+const { slug } = Astro.params;
+const { entry, previousSlug, nextSlug } = Astro.props;
+---
+
+<Layout title={slug}>
+	<ComicLayout
+		title={entry.data.title}
+		image={entry.data.image}
+		alt={entry.data.imageAlt}
+		date={entry.data.date}
+		previous={previousSlug}
+		next={nextSlug}
+	/>
+</Layout>
