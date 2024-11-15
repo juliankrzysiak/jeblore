@@ -16,7 +16,6 @@ type Props = {
 };
 
 const { title, image, alt, date, previous, next } = Astro.props;
-console.log(previous, next);
 ---
 
 <main>
@@ -24,9 +23,13 @@ console.log(previous, next);
 	<div class='comic'>
 		<Image src={image} alt={alt} width={600} height={600} />
 		<div class='links'>
-			<a href={previous} class='left'>{previous ? 'previous' : 'nothing'}</a>
+			<span class='left'>
+				{previous && <a href={previous}>previous</a>}
+			</span>
 			<time>{date.toLocaleDateString()}</time>
-			<a href={next} class='right'>next</a>
+			<span class='right'>
+				{next && <a href={next}>next</a>}
+			</span>
 		</div>
 	</div>
 </main>
@@ -40,6 +43,10 @@ console.log(previous, next);
 		font-family: 'Grandstander Variable', system-ui;
 	}
 
+	h3 {
+		font-family: 'Shantell Sans Variable';
+	}
+
 	img {
 		display: relative;
 		max-width: 100%;
@@ -47,13 +54,21 @@ console.log(previous, next);
 	}
 
 	.comic {
-		margin: 0 0.75rem;
+		margin: 0 0.75rem 1rem;
 	}
 
 	.links {
 		display: flex;
 		justify-content: space-between;
 		padding: 0.25rem 0.5rem 0rem 0.5rem;
+	}
+
+	.left {
+		text-align: start;
+	}
+
+	.right {
+		text-align: right;
 	}
 
 	.left,
