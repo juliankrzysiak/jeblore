@@ -5,6 +5,8 @@ import '@fontsource-variable/shantell-sans';
 import '@fontsource-variable/grandstander';
 import { ViewTransitions } from 'astro:transitions';
 
+const pathname = new URL(Astro.request.url).pathname.slice(1);
+
 interface Props {
 	title: string;
 }
@@ -31,9 +33,12 @@ const { title } = Astro.props;
 			</div>
 			<nav>
 				<ul class='text-2xl'>
-					<a href='/'>home</a>
-					<a href='cast'>cast</a>
-					<a href='/comics'>comics</a>
+					<a href='/' class={pathname === '' ? 'active' : ''}>home</a>
+					<a href='/cast' class={pathname === 'cast' ? 'active' : ''}>cast</a>
+					<a
+						href='/comics'
+						class={pathname.startsWith('comics') ? 'active' : ''}>comics</a
+					>
 				</ul>
 			</nav>
 		</header>
@@ -72,6 +77,10 @@ const { title } = Astro.props;
 	}
 
 	nav {
-		font-weight: 300;
+		font-weight: 200;
+	}
+
+	.active {
+		font-weight: 400;
 	}
 </style>
