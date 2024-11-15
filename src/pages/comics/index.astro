@@ -19,7 +19,7 @@ const comics = (await getCollection('comics')).sort((a, b) => {
 				return (
 					<a href={`comics/${comic.id}`}>
 						<figure>
-							<figcaption>{comic.data.title}</figcaption>
+							<figcaption class='text-2xl'>{comic.data.title}</figcaption>
 							<Image
 								src={comic.data.image}
 								alt={comic.data.imageAlt}
@@ -50,5 +50,9 @@ const comics = (await getCollection('comics')).sort((a, b) => {
 	}
 	figure:hover {
 		transform: translateY(-5px);
+	}
+
+	figcaption {
+		padding-bottom: 0.25rem;
 	}
 </style>
