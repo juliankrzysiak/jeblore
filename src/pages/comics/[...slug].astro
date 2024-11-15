@@ -27,7 +27,7 @@ const { slug } = Astro.params;
 const { entry, previousSlug, nextSlug } = Astro.props;
 ---
 
-<Layout title={slug}>
+<Layout title={entry.data.title}>
 	<ComicLayout
 		title={entry.data.title}
 		image={entry.data.image}
