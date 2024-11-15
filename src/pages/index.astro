@@ -2,6 +2,7 @@
 import ComicLayout from 'src/layouts/ComicLayout.astro';
 import Layout from '../layouts/Layout.astro';
 import { getCollection } from 'astro:content';
+import { undefined } from 'astro:schema';
 
 const comics = (await getCollection('comics')).sort((a, b) => {
 	const aDateString = a.data.date.toLocaleDateString();
@@ -11,10 +12,11 @@ const comics = (await getCollection('comics')).sort((a, b) => {
 	if (aDateString > bDateString) return -1;
 	else return 0;
 });
-if (!comics) throw new Error('No comic found');
-
-const { title, image, imageAlt, date } = comics.at(-1).data;
-const previous = `comics/${comics.at(-2)?.id}`;
+const recentComic = comics.at(-1);
+const penultimateComic = comics.at(-2);
+if (!recentComic) throw new Error("Couldn't find comic");
+const { title, image, imageAlt, date } = recentComic.data;
+const previous = penultimateComic && `comics/${penultimateComic.id}`;
 ---
 
 <Layout title={title}>
