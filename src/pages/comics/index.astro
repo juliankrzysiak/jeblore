@@ -1,0 +1,54 @@
+---
+import { Image } from 'astro:assets';
+import { getCollection } from 'astro:content';
+import Layout from 'src/layouts/Layout.astro';
+const comics = (await getCollection('comics')).sort((a, b) => {
+	const aDateString = a.data.date.toLocaleDateString();
+	const bDateString = b.data.date.toLocaleDateString();
+
+	if (aDateString > bDateString) return 1;
+	if (aDateString < bDateString) return -1;
+	else return 0;
+});
+---
+
+<Layout title='comics'>
+	<main>
+		{
+			comics.map((comic) => {
+				return (
+					<a href={`comics/${comic.id}`}>
+						<figure>
+							<figcaption>{comic.data.title}</figcaption>
+							<Image
+								src={comic.data.image}
+								alt={comic.data.imageAlt}
+								width={300}
+								height={300}
+							/>
+						</figure>
+					</a>
+				);
+			})
+		}
+	</main>
+</Layout>
+
+<style>
+	main {
+		display: grid;
+		justify-content: center;
+		grid-template-columns: repeat(auto-fit, 300px);
+		gap: 2rem;
+		padding: 0 2rem;
+	}
+
+	figure {
+		text-align: center;
+		font-family: 'Shantell Sans Variable', system-ui;
+		transition: all 0.25s;
+	}
+	figure:hover {
+		transform: translateY(-5px);
+	}
+</style>

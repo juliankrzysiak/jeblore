@@ -31,7 +31,7 @@ const { title } = Astro.props;
 				<ul class='text-2xl'>
 					<a href='/'>home</a>
 					<a href='cast'>cast</a>
-					<a href='comics'>archive</a>
+					<a href='/comics'>comics</a>
 				</ul>
 			</nav>
 		</header>
@@ -43,6 +43,7 @@ const { title } = Astro.props;
 	body {
 		color: var(--color-text);
 		background-color: var(--color-background);
+		font-family: 'Grandstander Variable', system-ui;
 	}
 
 	header {
@@ -69,7 +70,6 @@ const { title } = Astro.props;
 	}
 
 	nav {
-		font-family: 'Grandstander Variable', system-ui;
 		font-weight: 300;
 	}
 </style>
