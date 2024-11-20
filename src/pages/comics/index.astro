@@ -25,6 +25,7 @@ const comics = (await getCollection('comics')).sort((a, b) => {
 								alt={comic.data.imageAlt}
 								width={300}
 								height={300}
+								quality='low'
 							/>
 						</figure>
 					</a>
@@ -36,9 +37,9 @@ const comics = (await getCollection('comics')).sort((a, b) => {
 
 <style>
 	main {
-		display: grid;
+		display: flex;
 		justify-content: center;
-		grid-template-columns: repeat(auto-fit, 300px);
+		flex-wrap: wrap;
 		gap: 2rem;
 		padding: 0 2rem;
 	}
