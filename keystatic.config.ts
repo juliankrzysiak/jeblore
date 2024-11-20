@@ -6,7 +6,7 @@ export default config({
 		kind: 'local',
 	},
 	collections: {
-		posts: collection({
+		comics: collection({
 			label: 'Comics',
 			slugField: 'title',
 			path: 'src/content/comics/*',
@@ -27,6 +27,40 @@ export default config({
 					validation: { isRequired: true },
 				}),
 				date: fields.date({ label: 'Date', validation: { isRequired: true } }),
+			},
+		}),
+		cast: collection({
+			label: 'Cast',
+			slugField: 'name',
+			path: 'src/content/cast/*',
+			schema: {
+				name: fields.slug({
+					name: { label: 'Name', validation: { isRequired: true } },
+					slug: { description: 'URL-friendly version of the title' },
+				}),
+				info: fields.object(
+					{
+						age: fields.text({ label: 'Age' }),
+						hobbies: fields.text({ label: 'Hobbies' }),
+					},
+					{ label: 'Info' }
+				),
+				images: fields.array(
+					fields.object({
+						image: fields.image({
+							label: 'Image',
+							validation: { isRequired: true },
+							directory: 'src/assets/images/cast',
+							publicPath: '@assets/images/cast/',
+						}),
+						imageAlt: fields.text({
+							label: 'Alt',
+							description: 'Short description of the image for accessibilty',
+							validation: { isRequired: true },
+						}),
+					}),
+					{ label: 'Images' }
+				),
 			},
 		}),
 	},
