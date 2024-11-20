@@ -111,8 +111,8 @@ a {
 	color: currentColor;
 }
 
-ul[role='list'],
-ol[role='list'] {
+ul,
+ol {
 	list-style: none;
 }
 
