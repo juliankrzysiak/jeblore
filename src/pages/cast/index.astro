@@ -1,23 +1,24 @@
 ---
 import { Image } from 'astro:assets';
+import { getCollection } from 'astro:content';
 import Card from 'src/components/Card.astro';
-import { getComics } from 'src/helper';
 import Layout from 'src/layouts/Layout.astro';
 
-const comics = await getComics();
+const cast = await getCollection('cast');
 ---
 
-<Layout title='comics'>
+<Layout title='cast'>
 	<main>
 		<ol>
 			{
-				comics.map((comic) => {
+				cast.map((char) => {
+					const currentImage = char.data.images[0];
 					return (
 						<Card
-							title={comic.data.title}
-							url={'comics/' + comic.id}
-							img={comic.data.image}
-							alt={comic.data.imageAlt}
+							title={char.data.name}
+							url={'cast/' + char.id}
+							img={currentImage.image}
+							alt={currentImage.imageAlt}
 						/>
 					);
 				})

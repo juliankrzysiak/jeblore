@@ -1,0 +1,43 @@
+---
+import { Image } from 'astro:assets';
+type Props = {
+	url: string;
+	title: string;
+	img: {
+		src: string;
+		width: number;
+		height: number;
+		format: 'png' | 'jpg' | 'jpeg' | 'tiff' | 'webp' | 'gif' | 'svg' | 'avif';
+	};
+	alt: string;
+	width?: number;
+	height?: number;
+};
+
+const { url, title, img, alt, width = 300, height = 300 } = Astro.props;
+---
+
+<li>
+	<a href={url}>
+		<figure>
+			<figcaption class='text-2xl'>{title}</figcaption>
+			<Image src={img} alt={alt} width={width} height={height} quality='low' />
+		</figure>
+	</a>
+</li>
+
+<style>
+	figure {
+		text-align: center;
+		font-family: 'Shantell Sans Variable', system-ui;
+		transition: all 0.25s;
+	}
+
+	figure:hover {
+		transform: translateY(-5px);
+	}
+
+	figcaption {
+		padding-bottom: 0.25rem;
+	}
+</style>
