@@ -1,16 +1,9 @@
 ---
 import { Image } from 'astro:assets';
-import { getCollection } from 'astro:content';
+import { getComics } from 'src/helper';
 import Layout from 'src/layouts/Layout.astro';
-const comics = (await getCollection('comics')).sort((a, b) => {
-	const aDate = a.data.date;
-	const bDate = b.data.date;
 
-	// Descending
-	if (aDate > bDate) return -1;
-	if (aDate < bDate) return 1;
-	else return 0;
-});
+const comics = await getComics();
 ---
 
 <Layout title='comics'>
