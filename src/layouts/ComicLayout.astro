@@ -19,18 +19,18 @@ const { title, image, alt, date, previous, next } = Astro.props;
 ---
 
 <main>
-	<h2 class='text-3xl'>{title}</h2>
-	<div class='comic'>
+	<figure>
+		<figcaption class='text-3xl'>{title}</figcaption>
 		<Image src={image} alt={alt} width={600} height={600} />
-		<div class='links'>
-			<span class='left'>
-				{previous && <a href={previous}>previous</a>}
-			</span>
-			<time>{date.toLocaleDateString()}</time>
-			<span class='right'>
-				{next && <a href={next}>next</a>}
-			</span>
-		</div>
+	</figure>
+	<div class='links'>
+		<span class='left'>
+			{previous && <a href={previous}>previous</a>}
+		</span>
+		<time>{date.toLocaleDateString()}</time>
+		<span class='right'>
+			{next && <a href={next}>next</a>}
+		</span>
 	</div>
 </main>
 
@@ -41,31 +41,29 @@ const { title, image, alt, date, previous, next } = Astro.props;
 		align-items: center;
 		gap: 0.25rem;
 		font-family: 'Grandstander Variable', system-ui;
+		margin: 0 auto;
+		width: fit-content;
+		padding: 0 1rem;
 	}
 
-	h2 {
+	figure {
 		font-family: 'Shantell Sans Variable';
 		text-align: center;
 	}
 
-	img {
-		display: relative;
-		max-width: 100%;
-		height: auto;
+	figure > :first-child {
+		margin-bottom: 0.25rem;
 	}
 
-	.comic {
-		margin: 0 0.75rem 1rem;
+	img {
+		height: auto;
 	}
 
 	.links {
 		display: flex;
 		justify-content: space-between;
-		padding: 0.25rem 0.5rem 0rem 0.5rem;
-	}
-
-	.left {
-		text-align: start;
+		width: 100%;
+		padding: 0 0.5rem;
 	}
 
 	.right {
