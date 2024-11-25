@@ -1,0 +1,40 @@
+---
+import Layout from 'src/layouts/Layout.astro';
+import { Image } from 'astro:assets';
+
+import gif from 'src/assets/images/jebconstruction.gif';
+---
+
+<Layout title='Not Found'>
+	<main>
+		<div class='image'>
+			<Image src={gif} alt='Jeb swinging a hammer repeatedly' width={600} />
+			<div>
+				<h2 class='text-4xl'>404</h2>
+				<p class='text-2xl'>Page not found : (</p>
+			</div>
+		</div>
+	</main>
+</Layout>
+
+<style>
+	main {
+		margin: 0 auto;
+		padding: 0 2rem;
+	}
+
+	.image {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		gap: 2rem;
+	}
+
+	img {
+		height: auto;
+	}
+
+	div {
+		text-align: center;
+	}
+</style>
