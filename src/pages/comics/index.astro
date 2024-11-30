@@ -1,17 +1,35 @@
 ---
-import { Image } from 'astro:assets';
 import Card from 'src/components/Card.astro';
 import { getComics } from 'src/helper';
 import Layout from 'src/layouts/Layout.astro';
 
-const comics = await getComics();
+const ascComics = await getComics('asc');
+const descComics = await getComics('desc');
 ---
 
 <Layout title='comics'>
 	<main>
-		<ol>
+		<select id='sortOrder'>
+			<option value='desc'>Newest to Oldest</option>
+			<option value='asc'>Oldest to Newest</option>
+		</select>
+		<ol class='desc hidden'>
 			{
-				comics.map((comic) => {
+				descComics.map((comic) => {
+					return (
+						<Card
+							title={comic.data.title}
+							url={'comics/' + comic.id}
+							img={comic.data.image}
+							alt={comic.data.imageAlt}
+						/>
+					);
+				})
+			}
+		</ol>
+		<ol class='asc'>
+			{
+				ascComics.map((comic) => {
 					return (
 						<Card
 							title={comic.data.title}
@@ -26,12 +44,43 @@ const comics = await getComics();
 	</main>
 </Layout>
 
+<script>
+	const ascComics = document.querySelector('.asc');
+	const descComics = document.querySelector('.desc');
+	const sortOrder = document.querySelector('#sortOrder') as HTMLSelectElement;
+	sortOrder.addEventListener('change', (ev) => {
+		const target = ev.target as HTMLSelectElement;
+		if (target.value === 'desc') {
+			ascComics?.classList.toggle('hidden');
+			descComics?.classList.toggle('hidden');
+		} else {
+			ascComics?.classList.toggle('hidden');
+			descComics?.classList.toggle('hidden');
+		}
+	});
+</script>
+
 <style>
+	main {
+		display: flex;
+		flex-direction: column;
+		gap: 1.5rem;
+		align-items: center;
+	}
+
+	select {
+		padding: 0.1rem 0;
+	}
+
 	ol {
 		display: flex;
 		justify-content: center;
 		flex-wrap: wrap;
 		gap: 2rem;
 		padding: 0 2rem;
+	}
+
+	.hidden {
+		display: none;
 	}
 </style>
