@@ -4,6 +4,7 @@ import '../styles/variables.css';
 import '@fontsource-variable/shantell-sans';
 import '@fontsource-variable/grandstander';
 import { ViewTransitions } from 'astro:transitions';
+import ThemeToggle from 'src/components/ThemeToggle.astro';
 
 const pathname = new URL(Astro.request.url).pathname.slice(1);
 
@@ -15,7 +16,7 @@ const { title } = Astro.props;
 ---
 
 <!doctype html>
-<html lang='en'>
+<html lang='en' data-theme='light'>
 	<head>
 		<meta charset='UTF-8' />
 		<meta name='description' content='Astro description' />
@@ -42,7 +43,9 @@ const { title } = Astro.props;
 						href='/comics'
 						class={pathname.startsWith('comics') ? 'active' : ''}>comics</a
 					>
-					<a href='/cast' class={pathname === 'cast' ? 'active' : ''}>cast</a>
+					<a href='/cast' class={pathname.startsWith('cast') ? 'active' : ''}
+						>cast</a
+					>
 				</menu>
 			</nav>
 		</header>
