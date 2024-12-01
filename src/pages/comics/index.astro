@@ -13,7 +13,7 @@ const descComics = await getComics('desc');
 			<option value='desc'>Newest to Oldest</option>
 			<option value='asc'>Oldest to Newest</option>
 		</select>
-		<ol class='desc hidden'>
+		<ol class='desc'>
 			{
 				descComics.map((comic) => {
 					return (
@@ -27,7 +27,7 @@ const descComics = await getComics('desc');
 				})
 			}
 		</ol>
-		<ol class='asc'>
+		<ol class='asc hidden'>
 			{
 				ascComics.map((comic) => {
 					return (
@@ -48,15 +48,9 @@ const descComics = await getComics('desc');
 	const ascComics = document.querySelector('.asc');
 	const descComics = document.querySelector('.desc');
 	const sortOrder = document.querySelector('#sortOrder') as HTMLSelectElement;
-	sortOrder.addEventListener('change', (ev) => {
-		const target = ev.target as HTMLSelectElement;
-		if (target.value === 'desc') {
-			ascComics?.classList.toggle('hidden');
-			descComics?.classList.toggle('hidden');
-		} else {
-			ascComics?.classList.toggle('hidden');
-			descComics?.classList.toggle('hidden');
-		}
+	sortOrder.addEventListener('change', () => {
+		ascComics?.classList.toggle('hidden');
+		descComics?.classList.toggle('hidden');
 	});
 </script>
 
