@@ -33,6 +33,7 @@ export default config({
 			label: 'Cast',
 			slugField: 'name',
 			path: 'src/content/cast/*',
+			format: { contentField: 'text' },
 			schema: {
 				name: fields.slug({
 					name: { label: 'Name', validation: { isRequired: true } },
@@ -45,6 +46,9 @@ export default config({
 					},
 					{ label: 'Info' }
 				),
+				text: fields.markdoc({
+					label: 'Text',
+				}),
 				images: fields.array(
 					fields.object({
 						image: fields.image({
