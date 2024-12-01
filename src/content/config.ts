@@ -10,14 +10,10 @@ const comics = defineCollection({
 		}),
 });
 const cast = defineCollection({
-	type: 'data',
+	type: 'content',
 	schema: ({ image }) =>
 		z.object({
 			name: z.string(),
-			info: z.object({
-				age: z.string(),
-				hobbies: z.string(),
-			}),
 			images: z
 				.object({
 					image: image().refine((img) => img),
