@@ -45,12 +45,15 @@ const descComics = await getComics('desc');
 </Layout>
 
 <script>
-	const ascComics = document.querySelector('.asc');
-	const descComics = document.querySelector('.desc');
-	const sortOrder = document.querySelector('#sortOrder') as HTMLSelectElement;
-	sortOrder.addEventListener('change', () => {
-		ascComics?.classList.toggle('hidden');
-		descComics?.classList.toggle('hidden');
+	document.addEventListener('astro:page-load', () => {
+		const ascComics = document.querySelector('.asc');
+		const descComics = document.querySelector('.desc');
+		const sortOrder = document.querySelector('#sortOrder');
+		if (!sortOrder) return;
+		sortOrder.addEventListener('change', () => {
+			ascComics?.classList.toggle('hidden');
+			descComics?.classList.toggle('hidden');
+		});
 	});
 </script>
 
