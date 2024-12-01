@@ -1,0 +1,71 @@
+---
+import { Image } from 'astro:assets';
+import { getCollection } from 'astro:content';
+import Layout from 'src/layouts/Layout.astro';
+export async function getStaticPaths() {
+	const cast = await getCollection('cast');
+
+	return cast.map((entry) => ({
+		params: {
+			slug: entry.id,
+		},
+		props: {
+			entry,
+		},
+	}));
+}
+
+const { entry } = Astro.props;
+const { Content, headings } = await entry.render();
+---
+
+<Layout title={entry.data.name}>
+	<main>
+		<figure>
+			<figcaption class='text-2xl'>{entry.data.name}</figcaption>
+			<Image
+				src={entry.data.images[0].image}
+				alt={entry.data.images[0].imageAlt}
+				width={300}
+				height={300}
+			/>
+		</figure>
+		<div id='content'>
+			<Content />
+		</div>
+	</main>
+</Layout>
+
+<style>
+	main {
+		margin: 0 auto;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		gap: 1rem;
+		padding: 0 2rem;
+	}
+	figure {
+		text-align: center;
+		font-family: 'Shantell Sans Variable', system-ui;
+		transition: all 0.25s;
+	}
+
+	figcaption {
+		padding-bottom: 0.25rem;
+	}
+
+	img {
+		height: auto;
+		border-radius: 0.5rem;
+		box-shadow:
+			0 4px 6px -1px rgb(0 0 0 / 0.1),
+			0 2px 4px -2px rgb(0 0 0 / 0.1);
+	}
+
+	:global(#content *) {
+		text-wrap: pretty;
+		max-width: 65ch;
+		all: revert;
+	}
+</style>
