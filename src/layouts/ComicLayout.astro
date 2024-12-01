@@ -21,7 +21,7 @@ const { title, image, alt, date, previous, next } = Astro.props;
 <main>
 	<figure>
 		<figcaption class='text-3xl'>{title}</figcaption>
-		<Image src={image} alt={alt} width={600} height={600} />
+		<Image src={image} alt={alt} width={600} height={600} loading='eager' />
 	</figure>
 	<div class='links'>
 		<span class='left'>
