@@ -1,44 +1,37 @@
 ---
-import { Image } from 'astro:assets';
 import { getCollection } from 'astro:content';
+import Card from 'src/components/Card.astro';
 import Layout from 'src/layouts/Layout.astro';
-import gif from 'src/assets/images/jebconstruction.gif';
 
 const cast = await getCollection('cast');
 ---
 
 <Layout title='cast'>
 	<main>
-		<figure>
-			<Image src={gif} alt='Jeb swinging a hammer repeatedly' />
-			<figcaption>Under construction!</figcaption>
-		</figure>
-
-		<!-- <CardLayout>
+		<ul>
 			{
 				cast.map((char) => {
 					const currentImage = char.data.images[0];
-				return (
-					<Card
-					title={char.data.name}
-					url={'cast/' + char.id}
-					img={currentImage.image}
-					alt={currentImage.imageAlt}
-					/>
+					return (
+						<Card
+							title={char.data.name}
+							url={'cast/' + char.id}
+							img={currentImage.image}
+							alt={currentImage.imageAlt}
+						/>
 					);
-					})
-					}
-					</CardLayout> -->
+				})
+			}
+		</ul>
 	</main>
 </Layout>
 
 <style>
-	main {
-		margin: 0 auto;
+	ul {
+		display: flex;
+		justify-content: center;
+		flex-wrap: wrap;
+		gap: 2rem;
 		padding: 0 2rem;
-	}
-
-	img {
-		height: auto;
 	}
 </style>
