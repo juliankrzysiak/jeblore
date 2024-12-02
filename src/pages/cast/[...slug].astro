@@ -7,7 +7,7 @@ export async function getStaticPaths() {
 
 	return cast.map((entry) => ({
 		params: {
-			slug: entry.id,
+			slug: entry.slug,
 		},
 		props: {
 			entry,
