@@ -16,6 +16,9 @@ type Props = {
 };
 
 const { title, image, alt, date, previous, next } = Astro.props;
+const formattedDate = new Intl.DateTimeFormat('en-US', {
+	timeZone: 'UTC',
+}).format(date);
 ---
 
 <main>
@@ -27,7 +30,7 @@ const { title, image, alt, date, previous, next } = Astro.props;
 		<span class='left'>
 			{previous && <a href={previous}>previous</a>}
 		</span>
-		<time>{date.toLocaleDateString()}</time>
+		<time>{formattedDate}</time>
 		<span class='right'>
 			{next && <a href={next}>next</a>}
 		</span>
