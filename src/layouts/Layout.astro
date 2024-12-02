@@ -4,6 +4,7 @@ import '@fontsource-variable/shantell-sans';
 import { ViewTransitions } from 'astro:transitions';
 import '../styles/reset.css';
 import '../styles/variables.css';
+import ThemeSelector from 'src/components/ThemeSelector.astro';
 
 const pathname = new URL(Astro.request.url).pathname.slice(1);
 
@@ -56,6 +57,7 @@ const webTitle = title + ' - jeblore';
 	</head>
 	<body>
 		<header transition:animate='none'>
+			<ThemeSelector />
 			<div class='title'>
 				<h1 class='text-6xl'>jeblore</h1>
 				<p class='text-lg'>every sunday</p>
@@ -81,7 +83,7 @@ const webTitle = title + ' - jeblore';
 					<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 576 512'
 						><!--!Font Awesome Free 6.7.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
 						<path
-							fill='currentColor'
+							stroke='currentColor'
 							d='M123.6 34.5c66.4 50.1 137.9 151.5 164.2 206C314 186 385.5 84.5 452 34.5c48-36.1 125.6-64.1 125.6 24.9c0 17.8-10.1 149.2-16.1 170.5c-20.7 74.2-96.1 93.1-163.1 81.6c117.2 20 147 86.3 82.6 152.6C358.7 590 305.2 432.5 291.5 392.1c-2.5-7.5-3.7-10.9-3.7-7.9c0-3.1-1.2 .4-3.7 7.9C270.4 432.5 216.9 590 94.6 464.1C30.2 397.8 60 331.5 177.2 311.5C110.2 322.9 34.8 304 14.1 229.8C8.1 208.5-2 77.1-2 59.3c0-88.9 77.7-61 125.6-24.9z'
 						></path></svg
 					>
@@ -90,7 +92,7 @@ const webTitle = title + ' - jeblore';
 					<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 448 512'
 						><!--!Font Awesome Free 6.7.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
 						<path
-							fill='currentColor'
+							stroke='currentColor'
 							d='M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z'
 						></path></svg
 					>
@@ -110,6 +112,7 @@ const webTitle = title + ' - jeblore';
 	}
 
 	header {
+		position: relative;
 		display: flex;
 		flex-direction: column;
 		justify-items: center;
@@ -156,5 +159,9 @@ const webTitle = title + ' - jeblore';
 
 	.active {
 		font-weight: 400;
+	}
+
+	svg {
+		fill: var(--color-text);
 	}
 </style>

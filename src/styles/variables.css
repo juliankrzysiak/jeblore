@@ -24,7 +24,8 @@
 	}
 	.text-base {
 		font-size: 1rem; /* 16px */
-		line-height: 1.5rem; /* 24px */
+		line-height: 1.5rem;
+		/* 24px */
 	}
 	.text-lg {
 		font-size: 1.125rem; /* 18px */
@@ -66,4 +67,39 @@
 		font-size: 8rem; /* 128px */
 		line-height: 1;
 	}
+}
+
+:root.dark {
+	--color-text: var(--slate-100);
+	--color-background: var(--slate-900);
+}
+
+:root.gold {
+	--color-text: #fcd34d;
+	--color-background: #0c0a09;
+}
+
+:root.pain {
+	--color-text: red;
+	--color-background: green;
+}
+
+:root.banana {
+	--color-text: #431407;
+	--color-background: #fde047;
+}
+
+:root.ash {
+	--color-text: #262626;
+	--color-background: #acbfa4;
+}
+
+:root.berry {
+	--color-text: #f7c59f;
+	--color-background: #2a324b;
+}
+
+:root.corn {
+	--color-text: #fbbf24;
+	--color-background: #451a03;
 }

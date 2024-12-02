@@ -1,0 +1,46 @@
+<select id='themeSelector'>
+	<option value='light'>light</option>
+	<option value='dark'>dark</option>
+	<option value='gold'>gold</option>
+	<option value='banana'>banana</option>
+	<option value='ash'>ash</option>
+	<option value='berry'>berry</option>
+	<option value='corn'>corn</option>
+	<option value='pain'>pain</option>
+</select>
+
+<script>
+	document.addEventListener('astro:page-load', () => {
+		const themeSelector = document.querySelector(
+			'#themeSelector'
+		) as HTMLSelectElement;
+
+		themeSelector.addEventListener('change', handleThemeChange);
+
+		function handleThemeChange() {
+			const theme = themeSelector.value;
+			document.documentElement.className = theme;
+			localStorage.setItem('theme', theme);
+		}
+	});
+</script>
+
+<script is:inline>
+	document.addEventListener('astro:after-swap', setTheme);
+	setTheme();
+
+	function setTheme() {
+		const themeSelector = document.querySelector('#themeSelector');
+		const theme = localStorage.theme || 'light';
+		document.documentElement.className = theme;
+		themeSelector.value = theme;
+	}
+</script>
+
+<style>
+	#themeSelector {
+		position: absolute;
+		top: 1rem;
+		right: 1rem;
+	}
+</style>
