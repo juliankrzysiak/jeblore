@@ -109,12 +109,12 @@ button[data-theme='banana'] {
 	background-color: #fde047;
 }
 
-:root.ash {
+:root.moss {
 	--color-text: #262626;
 	--color-background: #acbfa4;
 }
 
-button[data-theme='ash'] {
+button[data-theme='moss'] {
 	color: #262626;
 	background-color: #acbfa4;
 }
