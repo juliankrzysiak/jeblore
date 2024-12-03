@@ -48,17 +48,6 @@
 		}
 	});
 </script>
-
-<script is:inline>
-	document.addEventListener('astro:after-swap', setTheme);
-	setTheme();
-
-	function setTheme() {
-		const theme = localStorage.theme || 'light';
-		document.documentElement.className = theme;
-	}
-</script>
-
 <style>
 	#themeSelector {
 		position: absolute;

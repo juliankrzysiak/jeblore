@@ -54,6 +54,15 @@ const webTitle = title + ' - jeblore';
 		/>
 		<meta name='twitter:image' content='https://jeblore.com/jeb-og.jpg' />
 		<ViewTransitions />
+		<script is:inline>
+			document.addEventListener('astro:after-swap', setTheme);
+			setTheme();
+
+			function setTheme() {
+				const theme = localStorage.theme || 'light';
+				document.documentElement.className = theme;
+			}
+		</script>
 	</head>
 	<body>
 		<header transition:animate='none'>
