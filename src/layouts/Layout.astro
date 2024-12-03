@@ -57,7 +57,6 @@ const webTitle = title + ' - jeblore';
 	</head>
 	<body>
 		<header transition:animate='none'>
-			<ThemeSelector />
 			<div class='title'>
 				<h1 class='text-6xl'>jeblore</h1>
 				<p class='text-lg'>every sunday</p>
@@ -78,6 +77,7 @@ const webTitle = title + ' - jeblore';
 		<slot />
 		<footer class='text-sm'>
 			<p>© 2024 jeblore</p>
+			<ThemeSelector />
 			<div class='social'>
 				<a href='https://bsky.app/profile/jeblore.bsky.social'>
 					<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 576 512'
@@ -109,6 +109,7 @@ const webTitle = title + ' - jeblore';
 		color: var(--color-text);
 		background-color: var(--color-background);
 		font-family: 'Grandstander Variable', system-ui;
+		transition: background-color 0.5s;
 	}
 
 	header {

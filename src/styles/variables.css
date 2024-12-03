@@ -74,9 +74,19 @@
 	--color-background: var(--slate-900);
 }
 
+button[data-theme='dark'] {
+	color: var(--slate-100);
+	background-color: var(--slate-900);
+}
+
 :root.gold {
 	--color-text: #fcd34d;
 	--color-background: #0c0a09;
+}
+
+button[data-theme='gold'] {
+	color: #fcd34d;
+	background-color: #0c0a09;
 }
 
 :root.pain {
@@ -84,9 +94,19 @@
 	--color-background: green;
 }
 
+button[data-theme='pain'] {
+	color: red;
+	background-color: green;
+}
+
 :root.banana {
 	--color-text: #431407;
 	--color-background: #fde047;
+}
+
+button[data-theme='banana'] {
+	color: #431407;
+	background-color: #fde047;
 }
 
 :root.ash {
@@ -94,12 +114,27 @@
 	--color-background: #acbfa4;
 }
 
+button[data-theme='ash'] {
+	color: #262626;
+	background-color: #acbfa4;
+}
+
 :root.berry {
 	--color-text: #f7c59f;
 	--color-background: #2a324b;
 }
 
+button[data-theme='berry'] {
+	color: #f7c59f;
+	background-color: #2a324b;
+}
+
 :root.corn {
 	--color-text: #fbbf24;
 	--color-background: #451a03;
+}
+
+button[data-theme='corn'] {
+	color: #fbbf24;
+	background-color: #451a03;
 }

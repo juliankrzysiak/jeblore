@@ -1,24 +1,45 @@
-<select id='themeSelector'>
-	<option value='light'>light</option>
-	<option value='dark'>dark</option>
-	<option value='gold'>gold</option>
-	<option value='banana'>banana</option>
-	<option value='ash'>ash</option>
-	<option value='berry'>berry</option>
-	<option value='corn'>corn</option>
-	<option value='pain'>pain</option>
-</select>
+<button id='themeSelector' popovertarget='mypopover'
+	><svg
+		xmlns='http://www.w3.org/2000/svg'
+		width='24'
+		height='24'
+		viewBox='0 0 24 24'
+		fill='none'
+		stroke='currentColor'
+		stroke-width='2'
+		stroke-linecap='round'
+		stroke-linejoin='round'
+		class='lucide lucide-paint-bucket'
+		><path d='m19 11-8-8-8.6 8.6a2 2 0 0 0 0 2.8l5.2 5.2c.8.8 2 .8 2.8 0L19 11Z'
+		></path><path d='m5 2 5 5'></path><path d='M2 13h15'></path><path
+			d='M22 20a2 2 0 1 1-4 0c0-1.6 1.7-2.4 2-4 .3 1.6 2 2.4 2 4Z'></path></svg
+	>
+</button>
+<div id='mypopover' popover>
+	<h2 class='text-2xl'>Pick a theme</h2>
+	<div class='themes'>
+		<button data-theme='light'>light</button>
+		<button data-theme='dark'>dark</button>
+		<button data-theme='gold'>gold</button>
+		<button data-theme='banana'>banana</button>
+		<button data-theme='ash'>ash</button>
+		<button data-theme='berry'>berry</button>
+		<button data-theme='corn'>corn</button>
+		<button data-theme='pain'>pain</button>
+	</div>
+</div>
 
 <script>
 	document.addEventListener('astro:page-load', () => {
-		const themeSelector = document.querySelector(
-			'#themeSelector'
-		) as HTMLSelectElement;
+		const buttons = document.querySelectorAll('.themes > button');
+		buttons.forEach((button) => {
+			button.addEventListener('click', setTheme);
+		});
 
-		themeSelector.addEventListener('change', handleThemeChange);
-
-		function handleThemeChange() {
-			const theme = themeSelector.value;
+		function setTheme(e: Event) {
+			const target = e.target as HTMLButtonElement;
+			const theme = target.getAttribute('data-theme');
+			if (typeof theme !== 'string') return;
 			document.documentElement.className = theme;
 			localStorage.setItem('theme', theme);
 		}
@@ -30,17 +51,48 @@
 	setTheme();
 
 	function setTheme() {
-		const themeSelector = document.querySelector('#themeSelector');
 		const theme = localStorage.theme || 'light';
 		document.documentElement.className = theme;
-		themeSelector.value = theme;
 	}
 </script>
 
 <style>
 	#themeSelector {
 		position: absolute;
-		top: 1rem;
-		right: 1rem;
+		top: 0rem;
+		right: 0rem;
+		width: 2rem;
+		aspect-ratio: 1;
+		border: none;
+		background-color: inherit;
+		color: color-mix(in srgb, var(--color-text), transparent 50%);
+	}
+
+	@media (min-width: 425px) {
+		#themeSelector {
+			width: 3rem;
+		}
+	}
+
+	[popover] {
+		color: var(--color-text);
+		background-color: var(--color-background);
+		padding: 0.5rem 1rem;
+		border-radius: 5px;
+	}
+
+	h2 {
+		margin-bottom: 0.25rem;
+	}
+
+	.themes {
+		display: flex;
+		flex-direction: column;
+		gap: 0.25rem;
+	}
+
+	button {
+		border-radius: 5px;
+		padding: 0.5rem 0.5rem;
 	}
 </style>
