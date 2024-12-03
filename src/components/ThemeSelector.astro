@@ -31,17 +31,17 @@
 
 <script>
 	document.addEventListener('astro:page-load', () => {
-		const buttons = document.querySelectorAll('.themes > button');
-		buttons.forEach((button) => {
-			button.addEventListener('click', setTheme);
-		});
+		const themes = document.querySelector('.themes') as HTMLDivElement;
+		themes.addEventListener('click', setTheme);
 
 		function setTheme(e: Event) {
-			const target = e.target as HTMLButtonElement;
-			const theme = target.getAttribute('data-theme');
-			if (typeof theme !== 'string') return;
-			document.documentElement.className = theme;
-			localStorage.setItem('theme', theme);
+			const target = e.target as Element;
+			if (target.tagName === 'BUTTON') {
+				const theme = target.getAttribute('data-theme');
+				if (typeof theme !== 'string') return;
+				document.documentElement.className = theme;
+				localStorage.setItem('theme', theme);
+			}
 		}
 	});
 </script>
