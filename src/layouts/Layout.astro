@@ -79,7 +79,9 @@ const webTitle = title + ' - jeblore';
 			<p>© 2024 jeblore</p>
 			<ThemeSelector />
 			<div class='social'>
-				<a href='https://bsky.app/profile/jeblore.bsky.social'>
+				<a
+					href='https://bsky.app/profile/jeblore.bsky.social'
+					aria-label='bluesky link'>
 					<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 576 512'
 						><!--!Font Awesome Free 6.7.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
 						<path
@@ -88,7 +90,9 @@ const webTitle = title + ' - jeblore';
 						></path></svg
 					>
 				</a>
-				<a href='https://www.instagram.com/jeblore/'>
+				<a
+					href='https://www.instagram.com/jeblore/'
+					aria-label='instagram link'>
 					<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 448 512'
 						><!--!Font Awesome Free 6.7.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
 						<path
@@ -109,7 +113,6 @@ const webTitle = title + ' - jeblore';
 		color: var(--color-text);
 		background-color: var(--color-background);
 		font-family: 'Grandstander Variable', system-ui;
-		transition: background-color 0.5s;
 	}
 
 	header {
@@ -164,5 +167,10 @@ const webTitle = title + ' - jeblore';
 
 	svg {
 		fill: var(--color-text);
+	}
+
+	.preload * {
+		transition: none !important;
+		animation-duration: 0.001s !important;
 	}
 </style>
