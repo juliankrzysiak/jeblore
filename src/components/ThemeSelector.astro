@@ -21,21 +21,26 @@
 <div id='mypopover' popover>
 	<h2 class='text-2xl'>Pick a theme</h2>
 	<div class='themes'>
-		<button data-theme='light'>light</button>
-		<button data-theme='dark'>dark</button>
-		<button data-theme='gold'>gold</button>
-		<button data-theme='banana'>banana</button>
-		<button data-theme='moss'>moss</button>
-		<button data-theme='berry'>berry</button>
-		<button data-theme='corn'>corn</button>
-		<button data-theme='pain'>pain</button>
+		<button aria-pressed='false' data-theme='light'>light</button>
+		<button aria-pressed='false' data-theme='dark'>dark</button>
+		<button aria-pressed='false' data-theme='gold'>gold</button>
+		<button aria-pressed='false' data-theme='banana'>banana</button>
+		<button aria-pressed='false' data-theme='moss'>moss</button>
+		<button aria-pressed='false' data-theme='berry'>berry</button>
+		<button aria-pressed='false' data-theme='corn'>corn</button>
+		<button aria-pressed='false' data-theme='pain'>pain</button>
 	</div>
 </div>
-
 <script>
 	document.addEventListener('astro:page-load', () => {
 		const themes = document.querySelector('.themes') as HTMLDivElement;
 		themes.addEventListener('click', setTheme);
+
+		const theme = localStorage.getItem('theme');
+		const pressedButton = themes.querySelector(`[data-theme="${theme}"]`);
+		if (pressedButton instanceof HTMLButtonElement) {
+			pressedButton?.setAttribute('aria-pressed', 'true');
+		}
 
 		function setTheme(e: Event) {
 			const target = e.target as Element;
@@ -43,6 +48,13 @@
 				const theme = target.getAttribute('data-theme');
 				if (typeof theme !== 'string') return;
 				document.documentElement.className = theme;
+				const prevButton = document.querySelector(
+					'[data-theme][aria-pressed="true"]'
+				);
+				if (prevButton instanceof HTMLButtonElement) {
+					prevButton.setAttribute('aria-pressed', 'false');
+				}
+				target.setAttribute('aria-pressed', 'true');
 				localStorage.setItem('theme', theme);
 			}
 		}
