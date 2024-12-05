@@ -13,14 +13,13 @@ interface Props {
 }
 
 const { title } = Astro.props;
-const webTitle = title + ' - jeblore';
 ---
 
 <!doctype html>
 <html lang='en'>
 	<head>
 		<meta charset='UTF-8' />
-		<title>{webTitle}</title>
+		<title>{title}</title>
 		<meta
 			name='description'
 			content='A webcomic about living with Jeb and other creatures.'
@@ -36,7 +35,7 @@ const webTitle = title + ' - jeblore';
 		<!-- Facebook Meta Tags -->
 		<meta property='og:url' content='https://jeblore.com' />
 		<meta property='og:type' content='website' />
-		<meta property='og:title' content={webTitle} />
+		<meta property='og:title' content={title} />
 		<meta
 			property='og:description'
 			content='A webcomic about living with Jeb and other creatures.'
@@ -47,7 +46,7 @@ const webTitle = title + ' - jeblore';
 		<meta name='twitter:card' content='summary_large_image' />
 		<meta property='twitter:domain' content='jeblore.com' />
 		<meta property='twitter:url' content='https://jeblore.com' />
-		<meta name='twitter:title' content={webTitle} />
+		<meta name='twitter:title' content={title} />
 		<meta
 			name='twitter:description'
 			content='A webcomic about living with Jeb and other creatures.'
