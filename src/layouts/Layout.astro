@@ -65,6 +65,7 @@ const { title } = Astro.props;
 	</head>
 	<body>
 		<header transition:animate='none'>
+			<ThemeSelector />
 			<div class='title'>
 				<h1 class='text-6xl'>jeblore</h1>
 				<p class='text-lg'>every sunday</p>
@@ -84,8 +85,13 @@ const { title } = Astro.props;
 		</header>
 		<slot />
 		<footer class='text-sm'>
-			<p>© 2024 jeblore</p>
-			<ThemeSelector />
+			<div class='info'>
+				<span>© 2024 jeblore</span>
+				<span>|</span>
+				<span
+					><a href='https://github.com/juliankrzysiak/jeblore'>github</a></span
+				>
+			</div>
 			<div class='social'>
 				<a
 					href='https://bsky.app/profile/jeblore.bsky.social'
@@ -138,7 +144,7 @@ const { title } = Astro.props;
 		align-items: end;
 		gap: 1rem;
 		flex-grow: 1;
-		margin: 4rem 1rem 0.5rem;
+		margin: 4rem 1rem 0.25rem;
 		font-weight: 300;
 	}
 
@@ -151,11 +157,21 @@ const { title } = Astro.props;
 	.social {
 		display: flex;
 		gap: 1.5rem;
+		padding-bottom: 0.125rem;
 
 		svg {
 			width: 1.5rem;
 			aspect-ratio: 1;
 			color: var(--slate-900);
+		}
+	}
+
+	.info {
+		display: flex;
+		gap: 0.5rem;
+
+		> :nth-child(2) {
+			opacity: 0.5;
 		}
 	}
 
