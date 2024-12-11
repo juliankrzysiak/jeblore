@@ -11,8 +11,8 @@ export async function getStaticPaths() {
 		},
 		props: {
 			entry,
-			previousSlug: arr[i - 1]?.id,
-			nextSlug: arr[i + 1]?.id,
+			previousSlug: arr[i + 1]?.id,
+			nextSlug: arr[i - 1]?.id,
 		},
 	}));
 }
