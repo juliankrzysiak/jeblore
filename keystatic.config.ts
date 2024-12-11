@@ -15,6 +15,11 @@ export default config({
 					name: { label: 'Title', validation: { isRequired: true } },
 					slug: { description: 'URL-friendly version of the title' },
 				}),
+				draft: fields.checkbox({
+					label: 'Draft',
+					description:
+						'Set this comic as draft to prevent it from being published',
+				}),
 				image: fields.image({
 					label: 'Image',
 					validation: { isRequired: true },

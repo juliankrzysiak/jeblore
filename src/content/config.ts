@@ -4,6 +4,7 @@ const comics = defineCollection({
 	schema: ({ image }) =>
 		z.object({
 			title: z.string(),
+			draft: z.boolean(),
 			image: image().refine((img) => img),
 			imageAlt: z.string(),
 			date: z.date(),
