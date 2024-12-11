@@ -34,7 +34,7 @@ const descComics = await getComics('desc');
 					return (
 						<Card
 							title={comic.data.title}
-							url={'comics/' + comic.id}
+							url={'/comics/' + comic.id}
 							img={comic.data.image}
 							alt={comic.data.imageAlt}
 						/>
