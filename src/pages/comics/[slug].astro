@@ -18,6 +18,8 @@ export async function getStaticPaths() {
 }
 
 const { entry, previousSlug, nextSlug } = Astro.props;
+const previous = previousSlug && `/comics/${previousSlug}`;
+const next = nextSlug && `/comics/${nextSlug}`;
 ---
 
 <Layout title={entry.data.title + ' - jeblore'}>
@@ -26,7 +28,7 @@ const { entry, previousSlug, nextSlug } = Astro.props;
 		image={entry.data.image}
 		alt={entry.data.imageAlt}
 		date={entry.data.date}
-		previous={previousSlug}
-		next={nextSlug}
+		previous={previous}
+		next={next}
 	/>
 </Layout>
