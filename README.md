@@ -1,255 +1,286 @@
+<!-- Improved compatibility of back to top link: See: https://github.com/othneildrew/Best-README-Template/pull/73 -->
+<a id="readme-top"></a>
 <!--
-Hey, thanks for using the jeblore template.  
-If you have any enhancements, then fork this project and create a pull request 
-or just open an issue with the label "enhancement".
-
-Don't forget to give this project a star for additional support ;)
-Maybe you can mention me or this repo in the acknowledgements too
+*** Thanks for checking out the Best-README-Template. If you have a suggestion
+*** that would make this better, please fork the repo and create a pull request
+*** or simply open an issue with the tag "enhancement".
+*** Don't forget to give the project a star!
+*** Thanks again! Now go create something AMAZING! :D
 -->
 
+
+
+<!-- PROJECT SHIELDS -->
 <!--
-This README is a slimmed down version of the original one.
-Removed sections:
-- Screenshots
-- Running Test
-- Deployment
-- FAQ
-- Acknowledgements
+*** I'm using markdown "reference style" links for readability.
+*** Reference links are enclosed in brackets [ ] instead of parentheses ( ).
+*** See the bottom of this document for the declaration of the reference variables
+*** for contributors-url, forks-url, etc. This is an optional, concise syntax you may use.
+*** https://www.markdownguide.org/basic-syntax/#reference-style-links
 -->
+[![Contributors][contributors-shield]][contributors-url]
+[![Forks][forks-shield]][forks-url]
+[![Stargazers][stars-shield]][stars-url]
+[![Issues][issues-shield]][issues-url]
+[![MIT][license-shield]][license-url]
+[![LinkedIn][linkedin-shield]][linkedin-url]
 
-<div align="center">
 
-  <img src="public/jeb-og.jpg" alt="logo" width="400" height="auto" />
-  <h1>jeblore</h1>
-  
-  <p>
-    A web comic about living with Jeb and other creatures.  
-  </p>
 
-  
-<!-- Badges -->
-<p>
-  <a href="https://github.com/juliankrzysiak/jeblore/graphs/contributors">
-    <img src="https://img.shields.io/github/contributors/juliankrzysiak/jeblore" alt="contributors" />
-  </a>
-  <a href="">
-    <img src="https://img.shields.io/github/last-commit/juliankrzysiak/jeblore" alt="last update" />
-  </a>
-  <a href="https://github.com/juliankrzysiak/jeblore/network/members">
-    <img src="https://img.shields.io/github/forks/juliankrzysiak/jeblore" alt="forks" />
-  </a>
-  <a href="https://github.com/juliankrzysiak/jeblore/stargazers">
-    <img src="https://img.shields.io/github/stars/juliankrzysiak/jeblore" alt="stars" />
-  </a>
-  <a href="https://github.com/juliankrzysiak/jeblore/issues/">
-    <img src="https://img.shields.io/github/issues/juliankrzysiak/jeblore" alt="open issues" />
-  </a>
-  <a href="https://github.com/juliankrzysiak/jeblore/LICENSE">
-    <img src="https://img.shields.io/github/license/juliankrzysiak/jeblore" alt="license" />
-  </a>
-</p>
-   
-<h4>
-    <a href="https://jeblore.com">View Demo</a>
-  <span> · </span>
-    <a href="https://github.com/juliankrzysiak/jeblore">Documentation</a>
-  <span> · </span>
-    <a href="https://github.com/juliankrzysiak/jeblore/issues/">Report Bug</a>
-  <span> · </span>
-    <a href="https://github.com/juliankrzysiak/jeblore/issues/">Request Feature</a>
-  </h4>
-</div>
-
+<!-- PROJECT LOGO -->
 <br />
+<div align="center">
+  <a href="https://github.com/juliankrzysiak/jeblore">
+    <img src="public/jeb-og.jpg" alt="Logo" width="400">
+  </a>
 
-<!-- Table of Contents -->
-# Table of Contents
+<h3 align="center">jeblore</h3>
 
-- [About the Project](#about-the-project)
-  * [Tech Stack](#tech-stack)
-  * [Features](#features)
-  * [Environment Variables](#environment-variables)
-- [Getting Started](#getting-started)
-  * [Prerequisites](#prerequisites)
-  * [Installation](#installation)
-  * [Run Locally](#run-locally)
-- [Usage](#usage)
-- [License](#license)
-- [Contact](#contact)
-- [Acknowledgements](#acknowledgements)
-  
-
-<!-- About the Project -->
-## About the Project
-
-<div align="center"> 
-  <img src="public/desktop-screenshot.png" alt="desktop screenshot" />
-  <img src="public/mobile-screenshot.png" alt="mobile screenshot" />
+  <p align="center">
+    A website for jeblore, a webcomic about living with Jeb and other creatures.
+    <br />
+    <a href="https://github.com/juliankrzysiak/jeblore"><strong>Explore the docs »</strong></a>
+    <br />
+    <br />
+    <a href="https://jeblore.com">View Demo</a>
+    ·
+    <a href="https://github.com/juliankrzysiak/jeblore/issues/new?labels=bug&template=bug-report---.md">Report Bug</a>
+    ·
+    <a href="https://github.com/juliankrzysiak/jeblore/issues/new?labels=enhancement&template=feature-request---.md">Request Feature</a>
+  </p>
 </div>
 
 
-<!-- TechStack -->
-### Tech Stack
 
+<!-- TABLE OF CONTENTS -->
 <details>
-  <summary>Client</summary>
-  <ul>
-    <li><a href="https://astro.build/">Astro</a></li>
-    <li><a href="https://www.typescriptlang.org/">Typescript</a></li>
-  </ul>
+  <summary>Table of Contents</summary>
+  <ol>
+    <li>
+      <a href="#about-the-project">About The Project</a>
+      <ul>
+        <li><a href="#built-with">Built With</a></li>
+        <li><a href="#features">Features</a></li>
+        <li><a href="#how-its-made">How It's Made</a></li>
+        <li><a href="#learning-outcomes">Learning Outcomes</a></li>
+      </ul>
+    </li>
+    <li>
+      <a href="#getting-started">Getting Started</a>
+      <ul>
+        <li><a href="#prerequisites">Prerequisites</a></li>
+        <li><a href="#installation">Installation</a></li>
+      </ul>
+    </li>
+    <li><a href="#usage">Usage</a></li>
+<!--<li><a href="#roadmap">Roadmap</a></li> -->
+    <li><a href="#contributing">Contributing</a></li>
+    <li><a href="#license">License</a></li>
+    <li><a href="#contact">Contact</a></li>
+    <li><a href="#acknowledgments">Acknowledgments</a></li>
+  </ol>
 </details>
 
-<details>
-  <summary>Server</summary>
-  <ul>
-      <li><a href="https://astro.build/">Astro</a></li>
-  </ul>
-</details>
 
-<details>
-<summary>Database</summary>
-  <ul>
-    <li><a href="https://keystatic.com/">Keystatic</a></li>
-  </ul>
-</details>
+
+<!-- ABOUT THE PROJECT -->
+## About The Project
+
+Desktop Light             |  Mobile Dark
+-------------------------|-------------------------
+<img src="https://github.com/user-attachments/assets/d1b9cfe8-6dbd-41db-844e-c46dcf400ece" alt="Desktop screenshot">  |  <img src="https://github.com/user-attachments/assets/b37065a4-4f03-460d-8893-06505b2e645b" alt="Mobile screenshot">
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+### Built With
 
 <!-- 
-<details>
-<summary>DevOps</summary>
-  <ul>
-  </ul>
-</details>
+* [![Next][Next.js]][Next-url]
+* [![React][React.js]][React-url]
+* [![Svelte][Svelte.dev]][Svelte-url]
 -->
 
-<!-- Features -->
-### Features
+* [![Astro][Astro-shield]][Astro-url]
+* [![TypeScript][TypeScript-shield]][TypeScript-url]
+* [![Keystatic][Keystatic-shield]][Keystatic-url]
 
-- Performant static site showcasing weekly comics
-- Github-based CMS makes it easy to manage data
-- Simple and accessible design, reflecting the simple nature of Jeb
-- A Cool Theme Picker
+ ### Features
+* Performant static site for hosting webcomics
+* Git-based CMS to easily change data
+* Simple and accessible design
+* Cool theme picker
 
-<!-- Color Reference 
-### Color Reference
+### How It's Made
+  I made this website using a static site generator, Astro, because it is perfect for content-focused websites like this for increases performance and pleasant DX. The only JS used is for the theme picker.
 
-| Color             | Hex                                                                |
-| ----------------- | ------------------------------------------------------------------ |
-| Primary Color | ![#222831](https://via.placeholder.com/10/222831?text=+) #222831 |
-| Secondary Color | ![#393E46](https://via.placeholder.com/10/393E46?text=+) #393E46 |
-| Accent Color | ![#00ADB5](https://via.placeholder.com/10/00ADB5?text=+) #00ADB5 |
-| Text Color | ![#EEEEEE](https://via.placeholder.com/10/EEEEEE?text=+) #EEEEEE |
--->
+  I designed the webite to be simple, emulating the simple mind of Jeb, our eponymous main character.
+
+  And the simplicity of use and focus on accessibility also leads to better UX.
+
+  Kepping in this theme, I wanted the website to be easily updated, so I opted for a git-based CMS, which would just store the images in the repo. All the images are optimized during the build process.
+
+### Learning Outcomes
+
+| The Good                               | The Bad                                              | The Ugly |
+|----------------------------------------|------------------------------------------------------|----------|
+| Performance from SSG   | Too much time spent on what is the best CMS   |           |
+| Back to Vanilla CSS |     Did not have a good time with Decap CMS                     |          |
+|             Accessibility            |   URL issues in prod                                                     |          |
+|            Theme Picker          |                                                      |          |
+  
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
-<!-- Env Variables -->
-### Environment Variables
 
-There are no environment variables for this project as it is locally based for now.
-
-<!-- Getting Started -->
+<!-- GETTING STARTED -->
 ## Getting Started
 
-<!-- Prerequisites -->
+To get a local copy up and running follow the steps.
+
 ### Prerequisites
 
-This project uses pnpm as the package manager
+This is an example of how to list things you need to use the software and how to install them.
+* pnpm
+  ```sh
+  npm install -g pnpm
+  ```
 
-```bash
- npm install --global pnpm
-```
-
-<!-- Installation 
 ### Installation
 
-Install jeblore with pnpm
+1. Clone the repo
+   ```sh
+   git clone https://github.com/juliankrzysiak/jeblore.git
+   ```
+2. Go to project directory
+   ```sh
+   cd jeblore
+   ```
+3. Install dependencies
+   ```sh
+   pnpm install
+   ```
+4. Start the server
+   ```sh
+   pnpm start
+   ```
 
-```bash
-  pnpm install jeblore
-  cd jeblore
-```
--->
-
-<!-- Run Locally -->
-### Run Locally
-
-Clone the project
-
-```bash
-  git clone https://github.com/juliankrzysiak/jeblore.git
-```
-
-Go to the project directory
-
-```bash
-  cd jeblore
-```
-
-Install dependencies
-
-```bash
-  pnpm install
-```
-
-Start the server
-
-```bash
-  pnpm start
-```
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
-<!-- Usage -->
+
+<!-- USAGE EXAMPLES -->
 ## Usage
 
-When you are running the project locally, navigate to http://127.0.0.1:4321/keystatic to manage your data.
+You can add new comics or other data by accessing the CMS in dev mode. Start up dev mode then append /keystatic to the home url, eg. `http://127.0.0.1:4321/`.
 
-If you would like to allow the data to be changed while in production for yourself or other users through github, change the storage setting in `keystatic.config.ts` from 'local' to 'github' and follow the instructions at [keystatic github guide](https://keystatic.com/docs/github-mode).
+The default storage mode is local, but this can be [changed to github](https://keystatic.com/docs/github-mode) to allow for others with write permission to the repo to change data. 
 
-You can also use keystatic's [cloud storage](https://keystatic.com/docs/cloud), which makes it easier for non-technical users to access the CMS. 
-
-```javascript
+```js
+export default config({
 	storage: {
 		kind: 'github',
 	}
+})
+```
 
- ```
+For an easier option for non-tecnical clients, one can change the [storage mode to cloud](https://keystatic.com/docs/cloud).
 
-Otherwise the website is quite simple to use. Everything is automatically sorted and linked based on comic release dates. 
+You can easily change the structure of the data by going to `keystatic.config.ts` and modifying what you would like. 
 
-<!-- Contributing -->
-## Contributing
+I am hosting this on Cloudflare Pages, so you can get rid of the adapter in `astro.config.mjs` if you hosted elsewhere.
 
-<a href="https://github.com/juliankrzysiak/jeblore/graphs/contributors">
-  <img src="https://contrib.rocks/image?repo=juliankrzysiak/jeblore" />
-</a>
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
-Contributions are always welcome!
+<!-- ROADMAP 
+## Roadmap
 
-<!-- Code of Conduct 
-### Code of Conduct
+- [ ] Feature 1
+- [ ] Feature 2
+- [ ] Feature 3
+    - [ ] Nested Feature
 
-Please read the [Code of Conduct](https://github.com/juliankrzysiak/jeblore/blob/master/CODE_OF_CONDUCT.md)
+See the [open issues](https://github.com/juliankrzysiak/jeblore/issues) for a full list of proposed features (and known issues).
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 -->
 
+<!-- CONTRIBUTING -->
+## Contributing
 
-<!-- License -->
+Contributions are what make the open source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
+
+If you have a suggestion that would make this better, please fork the repo and create a pull request. You can also simply open an issue with the tag "enhancement".
+Don't forget to give the project a star! Thanks again!
+
+1. Fork the Project
+2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the Branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+### Top contributors:
+
+<a href="https://github.com/juliankrzysiak/jeblore/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=juliankrzysiak/jeblore" alt="contrib.rocks image" />
+</a>
+
+<!-- LICENSE -->
 ## License
 
-All images and assets are not allowed to be used in any other projects.
-The software itself is distributed under the MIT License for software. See LICENSE.txt for more information.
+Distributed under the MIT license EXCEPT for any images / assets. See `LICENSE.txt` for more information.
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
-<!-- Contact -->
+
+<!-- CONTACT -->
 ## Contact
 
-Your Name - [@bluesky_handle](https://twitter.com/twitter_handle) - jkrzysiak13@gmail.com
+Julian Krzysiak - jkrzysiak13@gmail.com
 
 Project Link: [https://github.com/juliankrzysiak/jeblore](https://github.com/juliankrzysiak/jeblore)
 
-<!-- Acknowledgments -->
-## Acknowledgements
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
- - [Shields.io](https://shields.io/)
- - [Awesome README](https://github.com/matiassingers/awesome-readme)
- - [Emoji Cheat Sheet](https://github.com/ikatyang/emoji-cheat-sheet/blob/master/README.md#travel--places)
- - [Readme Template](https://github.com/othneildrew/Best-README-Template)
+
+
+<!-- ACKNOWLEDGMENTS -->
+## Acknowledgments
+
+* [Favicon Generator](https://favicon.io/)
+* [Making the theme picker accessible](https://fossheim.io/writing/posts/accessible-theme-picker-html-css-js/)
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+
+<!-- MARKDOWN LINKS & IMAGES -->
+<!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
+[contributors-shield]: https://img.shields.io/github/contributors/juliankrzysiak/jeblore.svg?style=for-the-badge
+[contributors-url]: https://github.com/juliankrzysiak/jeblore/graphs/contributors
+[forks-shield]: https://img.shields.io/github/forks/juliankrzysiak/jeblore.svg?style=for-the-badge
+[forks-url]: https://github.com/juliankrzysiak/jeblore/network/members
+[stars-shield]: https://img.shields.io/github/stars/juliankrzysiak/jeblore.svg?style=for-the-badge
+[stars-url]: https://github.com/juliankrzysiak/jeblore/stargazers
+[issues-shield]: https://img.shields.io/github/issues/juliankrzysiak/jeblore.svg?style=for-the-badge
+[issues-url]: https://github.com/juliankrzysiak/jeblore/issues
+[license-shield]: https://img.shields.io/github/license/juliankrzysiak/jeblore.svg?style=for-the-badge
+[license-url]: https://github.com/juliankrzysiak/jeblore/LICENSE.txt
+[linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
+[linkedin-url]: https://linkedin.com/in/juliankrzysiak
+[product-screenshot]: public/jb-og.png
+[Next.js]: https://img.shields.io/badge/next.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white
+[Next-url]: https://nextjs.org/
+[React.js]: https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB
+[React-url]: https://reactjs.org/
+[Svelte.dev]: https://img.shields.io/badge/Svelte-4A4A55?style=for-the-badge&logo=svelte&logoColor=FF3E00
+[Svelte-url]: https://svelte.dev/
+[Astro-shield]: https://img.shields.io/badge/Astro-000000?style=for-the-badge&logo=astro&logoColor=BC52EE
+[Astro-url]: https://astro.build/
+[TypeScript-shield]: https://img.shields.io/badge/TypeScript-3178c6?style=for-the-badge&logo=typescript&logoColor=ffffff
+[TypeScript-url]: https://www.typescriptlang.org/
+[Keystatic-shield]: https://img.shields.io/badge/Keystatic-ffffff?style=for-the-badge&logo=keystone&logoColor=000000
+[Keystatic-url]: https://keystatic.com/
