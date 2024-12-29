@@ -24,7 +24,14 @@ const formattedDate = new Intl.DateTimeFormat('en-US', {
 <main>
 	<figure>
 		<figcaption>{title}</figcaption>
-		<Image src={image} alt={alt} width={550} height={550} loading='eager' />
+		<Image
+			src={image}
+			alt={alt}
+			width={550}
+			height={550}
+			loading='eager'
+			quality='max'
+		/>
 	</figure>
 	<div class='links'>
 		<span class='left'>
