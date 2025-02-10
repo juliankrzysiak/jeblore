@@ -7,6 +7,7 @@ const comics = defineCollection({
 			draft: z.boolean(),
 			image: image().refine((img) => img),
 			imageAlt: z.string(),
+			video: z.string().optional(),
 			date: z.date(),
 		}),
 });

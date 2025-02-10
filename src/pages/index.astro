@@ -8,7 +8,7 @@ const recentComic = comics[0];
 const penultimateComic = comics[1];
 
 if (!recentComic) throw new Error("Couldn't find comic");
-const { title, image, imageAlt, date } = recentComic.data;
+const { title, image, imageAlt, video, date } = recentComic.data;
 const previous = penultimateComic && `comics/${penultimateComic.id}`;
 ---
 
@@ -17,6 +17,7 @@ const previous = penultimateComic && `comics/${penultimateComic.id}`;
 		title={title}
 		image={image}
 		alt={imageAlt}
+		video={video}
 		date={date}
 		previous={previous}
 	/>

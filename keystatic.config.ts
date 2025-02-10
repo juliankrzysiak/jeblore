@@ -31,6 +31,11 @@ export default config({
 					description: 'Short description of the comic for accessibilty',
 					validation: { isRequired: true },
 				}),
+				video: fields.file({
+					label: 'Video',
+					directory: 'public/videos',
+					publicPath: '/videos/',
+				}),
 				date: fields.date({ label: 'Date', validation: { isRequired: true } }),
 			},
 		}),

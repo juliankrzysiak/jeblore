@@ -10,12 +10,13 @@ type Props = {
 		format: 'png' | 'jpg' | 'jpeg' | 'tiff' | 'webp' | 'gif' | 'svg' | 'avif';
 	};
 	alt: string;
+	video?: string;
 	date: Date;
 	previous?: string;
 	next?: string;
 };
 
-const { title, image, alt, date, previous, next } = Astro.props;
+const { title, image, alt, video, date, previous, next } = Astro.props;
 const formattedDate = new Intl.DateTimeFormat('en-US', {
 	timeZone: 'UTC',
 }).format(date);
@@ -24,14 +25,22 @@ const formattedDate = new Intl.DateTimeFormat('en-US', {
 <main>
 	<figure>
 		<figcaption>{title}</figcaption>
-		<Image
-			src={image}
-			alt={alt}
-			width={550}
-			height={550}
-			loading='eager'
-			quality='max'
-		/>
+		{
+			video ? (
+				<video controls width={550} height={550}>
+					<source src={video} />
+				</video>
+			) : (
+				<Image
+					src={image}
+					alt={alt}
+					width={550}
+					height={550}
+					loading='eager'
+					quality='max'
+				/>
+			)
+		}
 	</figure>
 	<div class='links'>
 		<span class='left'>
@@ -77,7 +86,8 @@ const formattedDate = new Intl.DateTimeFormat('en-US', {
 		margin-bottom: 0.25rem;
 	}
 
-	img {
+	img,
+	video {
 		height: auto;
 	}
 
