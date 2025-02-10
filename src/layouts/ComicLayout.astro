@@ -19,6 +19,7 @@ type Props = {
 const { title, image, alt, video, date, previous, next } = Astro.props;
 const formattedDate = new Intl.DateTimeFormat('en-US', {
 	timeZone: 'UTC',
+	dateStyle: 'medium',
 }).format(date);
 ---
 
