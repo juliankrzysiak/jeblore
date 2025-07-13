@@ -16,39 +16,46 @@ type Props = {
 	next?: string;
 };
 
-const { title, image, alt, video, date, previous, next } = Astro.props;
+const { title, image, alt, video, date, previous: prev, next } = Astro.props;
 const formattedDate = new Intl.DateTimeFormat('en-US', {
 	timeZone: 'UTC',
 	dateStyle: 'medium',
 }).format(date);
 ---
 
-<main>
-	<figure>
+<main >
+	<figure >
 		<figcaption>{title}</figcaption>
+		<div class="img-container">
 		{
 			video ? (
-				<video controls width={550} height={550}>
+				<video controls width={600} height={600}>
 					<source src={video} />
 				</video>
 			) : (
+
 				<Image
 					src={image}
 					alt={alt}
-					width={550}
-					height={550}
+					width={600}
+					height={600}
 					loading='eager'
 					quality='max'
-				/>
-			)
-		}
+					/>
+				)
+			}
+			
+		{prev &&  <a href={prev} class={video ? 'prev-vid-link' : 'prev-img-link'} aria-label="Previous comic" data-astro-prefetch="viewport"></a>}
+		{next &&  <a href={next} class={video ? 'next-vid-link' : 'next-img-link'}  aria-label="Next comic" data-astro-prefetch="viewport"></a>}
+			</div>
+
 	</figure>
 	<div class='links'>
-		<span class='left'>
-			{previous && <a href={previous}>previous</a>}
+		<span class='prev-link'>
+			{prev && <a href={prev}>previous</a>}
 		</span>
 		<time>{formattedDate}</time>
-		<span class='right'>
+		<span class='next-link'>
 			{next && <a href={next}>next</a>}
 		</span>
 	</div>
@@ -69,6 +76,42 @@ const formattedDate = new Intl.DateTimeFormat('en-US', {
 	figcaption {
 		font-size: 1.5rem; /* 24px */
 		line-height: 2rem; /* 32px */
+	}
+
+	.img-container {
+		position: relative;
+	}
+
+	.prev-img-link {
+		position: absolute;
+		top: 0;
+		left: 0;
+		height: 100%;
+		width: 50%;
+	}
+
+	.next-img-link {
+		position: absolute;
+		top: 0;
+		right: 0;
+		height: 100%;
+		width: 50%;
+	}
+
+	.prev-vid-link {
+		position: absolute;
+		top: 0;
+		left: 0;
+		height: 50%;
+		width: 50%;
+	}
+
+	.next-vid-link {
+		position: absolute;
+		top: 0;
+		right: 0;
+		height: 50%;
+		width: 50%;
 	}
 
 	@media (min-width: 425px) {
@@ -99,12 +142,12 @@ const formattedDate = new Intl.DateTimeFormat('en-US', {
 		padding: 0 0.5rem;
 	}
 
-	.right {
+	.next-link {
 		text-align: right;
 	}
 
-	.left,
-	.right {
+	.prev-link,
+	.next-link {
 		flex-grow: 1;
 		flex-basis: 0;
 	}
