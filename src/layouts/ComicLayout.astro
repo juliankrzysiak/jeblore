@@ -29,7 +29,7 @@ const formattedDate = new Intl.DateTimeFormat('en-US', {
 		<div class="img-container">
 		{
 			video ? (
-				<video controls width={600} height={600}>
+				<video controls width={650} height={650}>
 					<source src={video} />
 				</video>
 			) : (
@@ -38,7 +38,7 @@ const formattedDate = new Intl.DateTimeFormat('en-US', {
 					src={image}
 					alt={alt}
 					width={650}
-					height={600}
+					height={650}
 					loading='eager'
 					quality='max'
 					/>
@@ -54,6 +54,7 @@ const formattedDate = new Intl.DateTimeFormat('en-US', {
 		<span class='prev-link'>
 			{prev && <a href={prev}>previous</a>}
 		</span>
+		
 		<time>{formattedDate}</time>
 		<span class='next-link'>
 			{next && <a href={next}>next</a>}
